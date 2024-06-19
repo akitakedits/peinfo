@@ -7,7 +7,7 @@ This lets you know what a json file should be named in order to be loaded by spi
 
 ## Requirements
 
-- Install **python 3.6 or newr** *(according to [vermin](https://github.com/netromdk/vermin))*
+- Install **python 3.6 or newer** *(according to [vermin](https://github.com/netromdk/vermin))*
 - Clone the repo and go to its root directory `git clone https://github.com/akitakedits/peinfo.git && cd peinfo`
 
 ## Usage
