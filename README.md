@@ -16,7 +16,7 @@ This lets you know what a json file should be named in order to be loaded by spi
 
 ### Arguments
 
-- `game_code` - The game code (KFC, LDJ. etc..) corresponding to your dll file, not case sensitive.
+- `game_code` - The game code (KFC, LDJ, etc..) corresponding to your dll file, not case sensitive.
 - `dll_path` - The path to your dll. If contained within the same directory it can simply be the dll's file name.
 
 ### Example
