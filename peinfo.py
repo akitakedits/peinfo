@@ -10,7 +10,7 @@ if __name__ == "__main__":
         game_code = sys.argv[1]
         dll_path = sys.argv[2]
         try:
-            # Load dll and get PE & Optional headers
+            # Load dll and get PE and Optional headers
             pe = pefile.PE(dll_path)
             pe_header_offset = pe.DOS_HEADER.e_lfanew
             optional_header_offset = pe_header_offset + 24  # OptionalHeader follows PE header which is 24 bytes
@@ -24,10 +24,10 @@ if __name__ == "__main__":
             entry_point = pe.OPTIONAL_HEADER.AddressOfEntryPoint
             entry_point_offset = optional_header_offset + 16  # AddressOfEntryPoint is at offset 16 within OptionalHeader
 
-            # Concatenate Model, TimeDateStamp and AddressOfEntryPoint
+            # Concatenate GameCode, TimeDateStamp and AddressOfEntryPoint
             identifier = f"{game_code.upper()}-{timestamp:x}_{entry_point:x}"
 
-            # Output the results
+            # Output results
             print(f"TimeDateStamp: {readable_timestamp} (unix:{timestamp}) (hex:0x{timestamp:08X}) (offset:0x{timestamp_offset:08X})")
             print(f"AddressOfEntryPoint: 0x{entry_point:08X} (offset:0x{entry_point_offset:08X})")
             print(f"PE Identifier: {identifier}")
